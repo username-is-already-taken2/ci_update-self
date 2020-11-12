@@ -8,9 +8,9 @@ resources:
 jobs:
   - name: job-hello-world
     public: true
+    passed: [job-update-ci]
     plan:
       - task: hello-world
-        passed: [job-update-ci]
         config:
           platform: linux
           image_resource:
