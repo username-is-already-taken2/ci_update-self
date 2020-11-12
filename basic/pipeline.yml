@@ -17,7 +17,7 @@ jobs:
             source: {repository: busybox}
           run:
             path: echo
-            args: [hello world2]
+            args: [hello world3]
 
   - name: job-update-ci
     public: true
