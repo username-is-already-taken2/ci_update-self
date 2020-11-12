@@ -1,4 +1,10 @@
 ---
+resources:
+  - name: ci-update-self-git
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/username-is-already-taken2/ci_update-self.git
 jobs:
   - name: job-hello-world
     public: true
@@ -12,3 +18,12 @@ jobs:
           run:
             path: echo
             args: [hello world]
+
+  - name: job-update-ci
+    public: true
+    plan:
+      - get: ci-update-self-git
+        trigger: false
+      - set_pipeline: set-pipelines
+        file: ci-update-self-git/basic/pipeline.yml
+
