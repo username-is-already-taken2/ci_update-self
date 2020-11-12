@@ -17,13 +17,13 @@ jobs:
             source: {repository: busybox}
           run:
             path: echo
-            args: [hello world]
+            args: [hello world2]
 
   - name: job-update-ci
     public: true
     plan:
       - get: ci-update-self-git
         trigger: false
-      - set_pipeline: set-pipelines
+      - set_pipeline: self
         file: ci-update-self-git/basic/pipeline.yml
 
