@@ -10,6 +10,7 @@ jobs:
     public: true
     plan:
       - task: hello-world
+        passed: [job-update-ci]
         config:
           platform: linux
           image_resource:
@@ -17,7 +18,7 @@ jobs:
             source: {repository: busybox}
           run:
             path: echo
-            args: [hello world]
+            args: [hello world!]
 
   - name: job-update-ci
     public: true
